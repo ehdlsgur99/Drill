@@ -154,13 +154,15 @@ class RunState:
 next_state_table = {
     IdleState : {RIGHT_UP : RunState, LEFT_UP : RunState,
                  RIGHT_DOWN:RunState, LEFT_DOWN : RunState,
-                 SLEEP_TIMER:SleepState,
+                 SLEEP_TIMER:SleepState,DASH_DOWN : IdleState
                  },
     RunState : {RIGHT_UP : IdleState, LEFT_UP : IdleState,
                 LEFT_DOWN : IdleState, RIGHT_DOWN : IdleState,
                 DASH_DOWN : DashState},
     SleepState : {LEFT_DOWN : RunState, RIGHT_DOWN : RunState,
-                  LEFT_UP : RunState, RIGHT_UP:RunState},
+                  LEFT_UP : RunState, RIGHT_UP:RunState,
+                  DASH_DOWN : SleepState
+                  },
     DashState : {DASH_TIMER : RunState, LEFT_UP : IdleState,
                  RIGHT_UP : IdleState}
 }
