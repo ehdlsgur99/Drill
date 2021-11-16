@@ -33,8 +33,8 @@ def movePlayer():
     moveXVec += moveXVec / dis
     moveXVec += moveXVec / dis
 
-    x += moveXVec * 0.001
-    y += moveYVec * 0.001
+    x += moveXVec * 0.0001
+    y += moveYVec * 0.0001
 
     if moveXVec > 0:
         dir = 0
